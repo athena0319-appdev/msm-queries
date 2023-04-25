@@ -23,19 +23,20 @@
     </th>
   </tr>
 
-<% @list_of_actors.each do |a_thing| %>
- 
- <tr>
-  <td><%= a_thing.id %></td>
-  <td><img src="http://robohash.org/<%= a_thing.name %>"</td>
-  <td><%= a_thing.name %></td>
-  <td><%= a_thing.dob %></td>
-  <td>
-    <a href = "/actors/show<%= a_thing.id %>"> 
-    Show details 
-    </a> 
-  </td>
- </tr>
+<% @list_of_actors.each do |an_actor| %>
+  <tr>
+    <td><%= an_actor.id %></td>
+    <td>
+      <img src="http://robohash.org/<%= an_actor.name%>">
+      </td>
+    <td><%= an_actor.name %></td>
+    <td><%= an_actor.dob %></td>
+    <td>
+      <a href="/actors/<%= an_actor.id %>">
+      Show details
+      </a>
+    </td>
+  </tr>
  <% end %>
 
 </table>

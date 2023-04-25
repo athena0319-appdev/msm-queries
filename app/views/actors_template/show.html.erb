@@ -63,6 +63,13 @@
 
 <h2>Filmography</h2>
 <table border="1">
+
+<tr>
+    <th>Title</th>
+    <th>Year</th>
+    <th>Director</th>
+    <th>Character name</th>
+    
 <% @filmography.each do |a_film| %>
   <tr>
     <td>
@@ -76,7 +83,8 @@
       <%= d.name %>
     </td>
     <td>
-      Character Name
+      <% c = Character.where({ :id => a_film.director_id}).at(0) %>
+      <%= c.name %>
     </td>
     <td>
       <a href="">
